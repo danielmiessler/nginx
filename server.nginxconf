@@ -9,23 +9,6 @@ multi_accept on;
 
 http {
 
-# PageSpeed
-pagespeed on;
-pagespeed FileCachePath /dev/shm/;
-pagespeed Statistics on;
-pagespeed StatisticsLogging on;
-pagespeed LogDir /var/log/pagespeed;
-pagespeed StatisticsLoggingIntervalMs 60;
-pagespeed StatisticsLoggingMaxFileSizeKb 4096;
-
-# Domain drama
-pagespeed Domain http://danielmiessler.com;
-pagespeed Domain http://cdn.danielmiessler.com;
-
-# Filters
-
-pagespeed EnableFilters strip_image_meta_data,resize_rendered_image_dimensions,move_css_above_scripts,rewrite_css,lazyload_images,prioritize_critical_css,make_google_analytics_async,rewrite_javascript,combine_javascript,inline_css,inline_css,inline_javascript,recompress_images,resize_images,remove_comments,collapse_whitespace,extend_cache_css,extend_cache_images,extend_cache_scripts,remove_quotes;
-
 # Basic Settings
 
 sendfile on;

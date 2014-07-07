@@ -20,15 +20,6 @@ more_clear_headers 'Server*';
 more_clear_headers 'X-Powered*';
 more_clear_headers 'X-Page*';
 
-# Pagespeed stuff
-location ~ "\.pagespeed\.([a-z]\.)?[a-z]{2}\.[^.]{10}\.[^.]+" { add_header "" ""; }
-location ~ "^/ngx_pagespeed_static/" { }
-location ~ "^/ngx_pagespeed_beacon$" { }
-location /ngx_pagespeed_statistics { allow all; }
-location /ngx_pagespeed_global_statistics { allow all; }
-location /ngx_pagespeed_message { allow all; }
-location /pagespeed_console { allow all; }
-
 # Added headers
 more_set_headers 'Server: Apache/1.2.4';
 more_set_headers 'BestCDN: CacheFly';

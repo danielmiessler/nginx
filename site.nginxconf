@@ -1,7 +1,8 @@
 server {
-listen 80 default;
-server_name www.danielmiessler.com;
-rewrite ^(.*) http://danielmiessler.com$1/ permanent;
+## Redirect www to non-www url.
+listen       80;
+server_name  www.danielmiessler.com;
+return       301 http://danielmiessler.com$request_uri;
 }
 
 server {
